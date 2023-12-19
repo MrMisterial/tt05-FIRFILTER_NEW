@@ -78,7 +78,6 @@ module tt_um_FIR #( parameter MAX_COUNT = 24'd10_000_000 ) (
     
     
     /* Instantiate FIR module to test. */
-    
     FIR FIR_i(
         .clk(clk),
         .reset(reset),

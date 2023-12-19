@@ -54,7 +54,23 @@ module tt_um_FIR #( parameter MAX_COUNT = 24'd10_000_000 ) (
         end
     end
 
+
     // instantiate segment display
     seg7 seg7(.counter(digit), .segments(led_out));
+    
+    /*
+    wire [7:0] y_n;
+    assign uio_out = y_n;
+    
+    /* Instantiate FIR module to test. */
+    /*
+    FIR FIR_i(
+        .clk(clk),
+        .reset(reset),
+        .s_axis_fir_tdata(s_axis_fir_tdata),       
+        .s_axis_fir_tvalid(s_axis_fir_tvalid), 
+        .s_axis_fir_tready(s_axis_fir_tready),    
+        .m_axis_fir_tdata(m_axis_fir_tdata));  
+        */
 
 endmodule

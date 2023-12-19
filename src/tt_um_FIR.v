@@ -14,7 +14,7 @@ module tt_um_FIR #( parameter MAX_COUNT = 24'd10_000_000 ) (
     wire reset = rst_n; // needed for FIR Filter
     
     
-    /*
+    
     wire [6:0] led_out;
     assign uo_out[6:0] = led_out;
     assign uo_out[7] = 1'b0;
@@ -56,13 +56,13 @@ module tt_um_FIR #( parameter MAX_COUNT = 24'd10_000_000 ) (
                 second_counter <= second_counter + 1'b1;
         end
     end
-    */
+    
 
 
     // instantiate segment display
-    // seg7 seg7(.counter(digit), .segments(led_out));
+    seg7 seg7(.counter(digit), .segments(led_out));
     
-    
+    /*
     wire [7:0] m_axis_fir_tdata; //FIR OUTPUT DATA
     assign uio_out = m_axis_fir_tdata;
    
@@ -78,7 +78,7 @@ module tt_um_FIR #( parameter MAX_COUNT = 24'd10_000_000 ) (
     
     
     
-    /* Instantiate FIR module to test. */
+    
     FIR FIR_i(
         .clk(clk),
         .reset(reset),
@@ -86,6 +86,6 @@ module tt_um_FIR #( parameter MAX_COUNT = 24'd10_000_000 ) (
         .s_axis_fir_tvalid(s_axis_fir_tvalid), 
         .s_axis_fir_tready(s_axis_fir_tready),    
         .m_axis_fir_tdata(m_axis_fir_tdata));  
-        
+	*/
 
 endmodule

@@ -18,6 +18,10 @@ async def test_7seg(dut):
     dut.ui_in.value = 1
     await ClockCycles(dut.clk, 10)
     dut.rst_n.value = 1
+    
+    
+    dut.ui_in.value = 
+    
 
     # the compare value is shifted 10 bits inside the design to allow slower counting
     max_count = dut.ui_in.value << 10
